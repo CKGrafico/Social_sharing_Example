@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<style type="text/css">
+		html,body{
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 0.9em;
+		}
+		#socialbox a:link { color: #f0f0f0; text-decoration: none; }
+		#socialbox a:visited { color: #f0f0f0; text-decoration: none; }
+		#socialbox a:hover { color: #f0f0f0; text-decoration: underline; }
+		#socialbox a:active { color: #f0f0f0; text-decoration: none; }
+
+		#socialbox{
+			background: #2b2d30;
+			border-bottom: solid 2px #141517;
+			color: #f0f0f0;
+			display: none;
+			height: 25px;
+			left: 0;
+			padding: 5px;
+			position: fixed;
+			text-align: center;
+			top: 0;
+			width: 100%;
+		}
+		#socialbox #url{
+			float: left;
+		}
+		#socialbox #close{
+			cursor: pointer;
+			float: right;
+			margin-right: 10px;
+		}
+
+	</style>
+	<script type="text/javascript">
+		function Socializame(url){
+			$("#socialbox #url").text(url);
+			var texto = "¡Te recomiendo esta web!";
+			var facebook = "<a href='http://www.facebook.com/share.php?u="+url+"' target='_blank'>Facebook</a> ";
+			var twitter = "<a href='http://twitter.com/share?url="+url+"&text="+texto+"' target='_blank'>Tweeter</a> ";
+			var mail = "<a href='mailto:?subject="+texto+"&body="+url+"'>Email</a>";
+			var buttons = facebook+twitter+mail;
+			$("#socialbox #buttons").html(buttons);
+		}
+		$(document).on("ready",function(){
+			$("body").append("<div id='socialbox'><span id='url'>http://google.es</span><span id='buttons'></span><span id='close'>[x]</span></div>");
+		});
+
+		$(document).on("click",".social",function(e){
+			e.preventDefault();
+			$("#socialbox").slideDown();
+			Socializame($(this).attr("href"));
+		});
+
+		$(document).on("click","#socialbox #close",function(){
+			$("#socialbox").slideUp();
+		});
+	</script>
+
+	<title>Social Sharing</title>
+</head>
+<body>
+	<section>
+		<article>
+			<h3>Titulo del Artículo 1</h3>
+			<p>Chanante ipsum dolor sit amet, chachachá artista nui ut asobinao bajonaaa a tope con la maquinaria veniam ahí va qué chorrazo tontaco. Labore hueles avinagrado fresquete chavalada tunante agazapao regomello ojete moreno ayy qué gustico estoy fatal de lo mío voluptatum praesentium ut one more time veniam. Ut dignissimos con las rodillas in the guanter churretoso magna gaticos bonico del tó muchachada chotera. Traeros tol jamón cartoniano asquerosito cobete dignissimos monguer Guaper to sueltecico, ex sed bocachoti piticli ju-já. Quis nostrud praesentium mangurrián enim pepino en la mano ad zagal similique páharo freshquisimo chiquititantantan mollitia. Mollitia pepinoninoni super ñoño corrupti nianoniano interneeeer elit. Viejuno pero qué pelazo iusto cacahué mamellas ojete calor mollitia no te digo ná y te lo digo tó te viste de torero provident.</p>
+			<p>Monguer Guaper coconut agazapao atiendee ju-já adipisicing ducimus, estoy fatal de lo mío bocachoti. Síberet quos cacahué forrondosco iusto. One more time incididunt chavalada cobete te viste de torero viejuno pepino en la mano droja, ahí va qué chorrazo occaecati animi eveniet nostrud cosica. Zagal asquerosito piticli monetes, tontaco blanditiis con las rodillas in the guanter pataliebre.</p>
+			<p>Cacahué asquerosito pero qué pelazo adipisicing. Occaecati monguer Guaper artista payacho ojete calor officia mangurrián ojete moreno cartoniano, cobete sunt nostrud veniam. Estoy fatal de lo mío ju-já enjuto mojamuto saepe con las rodillas in the guanter ut forrondosco ahí va qué chorrazo, quos tunante deserunt. Tollina vivo con tu madre en un castillo to sueltecico pataliebre ayy qué gustico similique tontaco cabeza de viejo cuerpo de joven labore chotera freshquisimo. Nui gaticos coconut, eos gañán a tope con la maquinaria interneeeer chachachá muchachada horcate viejuno regomello. Churretoso droja síberet monetes.</p>
+			<a class="social" href="http://miweb.es/blog/articulos/articulos/enlace-al-articulo-uno.html">Compartir</a>
+			<a href="#">ver más</a>
+		</article>
+
+		<article>
+			<h3>Titulo del Artículo 2</h3>
+			<p>Chanante ipsum dolor sit amet, chachachá artista nui ut asobinao bajonaaa a tope con la maquinaria veniam ahí va qué chorrazo tontaco. Labore hueles avinagrado fresquete chavalada tunante agazapao regomello ojete moreno ayy qué gustico estoy fatal de lo mío voluptatum praesentium ut one more time veniam. Ut dignissimos con las rodillas in the guanter churretoso magna gaticos bonico del tó muchachada chotera. Traeros tol jamón cartoniano asquerosito cobete dignissimos monguer Guaper to sueltecico, ex sed bocachoti piticli ju-já. Quis nostrud praesentium mangurrián enim pepino en la mano ad zagal similique páharo freshquisimo chiquititantantan mollitia. Mollitia pepinoninoni super ñoño corrupti nianoniano interneeeer elit. Viejuno pero qué pelazo iusto cacahué mamellas ojete calor mollitia no te digo ná y te lo digo tó te viste de torero provident.</p>
+			<p>Monguer Guaper coconut agazapao atiendee ju-já adipisicing ducimus, estoy fatal de lo mío bocachoti. Síberet quos cacahué forrondosco iusto. One more time incididunt chavalada cobete te viste de torero viejuno pepino en la mano droja, ahí va qué chorrazo occaecati animi eveniet nostrud cosica. Zagal asquerosito piticli monetes, tontaco blanditiis con las rodillas in the guanter pataliebre.</p>
+			<p>Cacahué asquerosito pero qué pelazo adipisicing. Occaecati monguer Guaper artista payacho ojete calor officia mangurrián ojete moreno cartoniano, cobete sunt nostrud veniam. Estoy fatal de lo mío ju-já enjuto mojamuto saepe con las rodillas in the guanter ut forrondosco ahí va qué chorrazo, quos tunante deserunt. Tollina vivo con tu madre en un castillo to sueltecico pataliebre ayy qué gustico similique tontaco cabeza de viejo cuerpo de joven labore chotera freshquisimo. Nui gaticos coconut, eos gañán a tope con la maquinaria interneeeer chachachá muchachada horcate viejuno regomello. Churretoso droja síberet monetes.</p>
+			<a class="social" href="http://miweb.es/blog/articulos/articulos/enlace-al-articulo-dos.html">Compartir</a>
+			<a href="#">ver más</a>
+		</article>
+
+		<article>
+			<h3>Titulo del Artículo 3</h3>
+			<p>Chanante ipsum dolor sit amet, chachachá artista nui ut asobinao bajonaaa a tope con la maquinaria veniam ahí va qué chorrazo tontaco. Labore hueles avinagrado fresquete chavalada tunante agazapao regomello ojete moreno ayy qué gustico estoy fatal de lo mío voluptatum praesentium ut one more time veniam. Ut dignissimos con las rodillas in the guanter churretoso magna gaticos bonico del tó muchachada chotera. Traeros tol jamón cartoniano asquerosito cobete dignissimos monguer Guaper to sueltecico, ex sed bocachoti piticli ju-já. Quis nostrud praesentium mangurrián enim pepino en la mano ad zagal similique páharo freshquisimo chiquititantantan mollitia. Mollitia pepinoninoni super ñoño corrupti nianoniano interneeeer elit. Viejuno pero qué pelazo iusto cacahué mamellas ojete calor mollitia no te digo ná y te lo digo tó te viste de torero provident.</p>
+			<p>Monguer Guaper coconut agazapao atiendee ju-já adipisicing ducimus, estoy fatal de lo mío bocachoti. Síberet quos cacahué forrondosco iusto. One more time incididunt chavalada cobete te viste de torero viejuno pepino en la mano droja, ahí va qué chorrazo occaecati animi eveniet nostrud cosica. Zagal asquerosito piticli monetes, tontaco blanditiis con las rodillas in the guanter pataliebre.</p>
+			<p>Cacahué asquerosito pero qué pelazo adipisicing. Occaecati monguer Guaper artista payacho ojete calor officia mangurrián ojete moreno cartoniano, cobete sunt nostrud veniam. Estoy fatal de lo mío ju-já enjuto mojamuto saepe con las rodillas in the guanter ut forrondosco ahí va qué chorrazo, quos tunante deserunt. Tollina vivo con tu madre en un castillo to sueltecico pataliebre ayy qué gustico similique tontaco cabeza de viejo cuerpo de joven labore chotera freshquisimo. Nui gaticos coconut, eos gañán a tope con la maquinaria interneeeer chachachá muchachada horcate viejuno regomello. Churretoso droja síberet monetes.</p>
+			<a class="social" href="http://miweb.es/blog/articulos/articulos/enlace-al-articulo-tres.html">Compartir</a>
+			<a href="#">ver más</a>
+		</article>
+
+		<article>
+			<h3>Titulo del Artículo 4</h3>
+			<p>Chanante ipsum dolor sit amet, chachachá artista nui ut asobinao bajonaaa a tope con la maquinaria veniam ahí va qué chorrazo tontaco. Labore hueles avinagrado fresquete chavalada tunante agazapao regomello ojete moreno ayy qué gustico estoy fatal de lo mío voluptatum praesentium ut one more time veniam. Ut dignissimos con las rodillas in the guanter churretoso magna gaticos bonico del tó muchachada chotera. Traeros tol jamón cartoniano asquerosito cobete dignissimos monguer Guaper to sueltecico, ex sed bocachoti piticli ju-já. Quis nostrud praesentium mangurrián enim pepino en la mano ad zagal similique páharo freshquisimo chiquititantantan mollitia. Mollitia pepinoninoni super ñoño corrupti nianoniano interneeeer elit. Viejuno pero qué pelazo iusto cacahué mamellas ojete calor mollitia no te digo ná y te lo digo tó te viste de torero provident.</p>
+			<p>Monguer Guaper coconut agazapao atiendee ju-já adipisicing ducimus, estoy fatal de lo mío bocachoti. Síberet quos cacahué forrondosco iusto. One more time incididunt chavalada cobete te viste de torero viejuno pepino en la mano droja, ahí va qué chorrazo occaecati animi eveniet nostrud cosica. Zagal asquerosito piticli monetes, tontaco blanditiis con las rodillas in the guanter pataliebre.</p>
+			<p>Cacahué asquerosito pero qué pelazo adipisicing. Occaecati monguer Guaper artista payacho ojete calor officia mangurrián ojete moreno cartoniano, cobete sunt nostrud veniam. Estoy fatal de lo mío ju-já enjuto mojamuto saepe con las rodillas in the guanter ut forrondosco ahí va qué chorrazo, quos tunante deserunt. Tollina vivo con tu madre en un castillo to sueltecico pataliebre ayy qué gustico similique tontaco cabeza de viejo cuerpo de joven labore chotera freshquisimo. Nui gaticos coconut, eos gañán a tope con la maquinaria interneeeer chachachá muchachada horcate viejuno regomello. Churretoso droja síberet monetes.</p>
+			<a class="social" href="http://miweb.es/blog/articulos/articulos/enlace-al-articulo-cuatro.html">Compartir</a>
+			<a href="#">ver más</a>
+		</article>
+	</section>
+</body>
+</html>
